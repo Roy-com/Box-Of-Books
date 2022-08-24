@@ -1,0 +1,70 @@
+.LoginForm{
+display: flex;
+justify-content: center;
+align-items: center;
+padding:50px;
+
+}
+Form {
+    border: 1px solid #d6d6d6;
+    padding: 20px;
+    border-radius: 5px;
+}
+.visiblityof{
+    visibility: none;
+    opacity: 0;
+    height: 0;
+}
+.marginTopFromPassword{
+    margin-top: -16px;
+}
+.forgetPasswordButton{
+    margin-left: 20px;
+    color: #647a74 !important;
+    font-size: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid;
+    padding-bottom: 1px;
+    border-radius: 4px;
+}
+.registerButton{
+    color: #647a74 !important;
+    font-size: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid;
+    padding-bottom: 1px;
+    border-radius: 4px;
+}
+.NotaMemberDiv{
+    margin-top: 10px;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    color: #98a9b4;
+}
+.notaMembertext {
+color: #757393 !important;
+}
+
+.LoginButtonLoginPage{
+    background: #2a4c51!important;
+    color: #919ec6 !important;
+    border: none !important;
+    width: 74px !important;
+    font-size: 15px !important;
+    height: 32px !important;
+    padding: 0px !important;
+}
+.form-control {
+  
+    background-color: #043345 !important;
+   color: wheat !important;
+}
+
+.headingOfforms{
+    color: #6c7174;
+    margin-bottom: 19px;
+    font-size: 22px;
+}

@@ -1,0 +1,27 @@
+.SignupForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px;
+    height: 84vh;
+    
+    }
+
+    Form {
+        border: 1px solid #d6d6d6;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .LoginButton{
+        color: #647a74 !important;
+        font-size: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid;
+        padding-bottom: 1px;
+        border-radius: 4px;
+    }
+    .NotaMemberDiv{
+        margin-top: 10px;
+    }

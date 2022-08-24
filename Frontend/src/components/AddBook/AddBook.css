@@ -1,0 +1,31 @@
+.AddBookForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.submitButoonOfAddBook{
+    margin-top: 18px;
+    margin-left: -81px;
+}
+.checkboxOfAddBookdiv{
+    /* border: 1px solid red; */
+    display: inline-block;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    /* width: 22%; */
+    margin-left: -107px;
+    margin-top: -9px;
+}
+.checkboxOfAddBook label{
+    margin-left: 20px;
+
+}
+.submitButoonOfAddBook button{
+    width: 164%;
+}
+.addBookHeading{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
