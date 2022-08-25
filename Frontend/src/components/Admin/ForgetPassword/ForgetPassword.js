@@ -13,16 +13,24 @@ const ForgetPassword = () => {
     const fetchHandeler = async () => {
       return await axios.post(URL,{email:String(inputs.email)}).then((res) => res.data);
     };
+    const [errr,seterrr]= useState();
+    const[succc,setsuccc]=useState();
     const OtpSentButton=(e)=>{
         e.preventDefault();
         fetchHandeler().then((data) => {
        if(data.status=="ok"
        ){
-        alert(data.message)
-       setEmailSent(true)
+        seterrr()
+     
+        setsuccc(data.message)
+      
+       setTimeout(function () {
+                    
+        setEmailSent(true)
+      }, 2000);
        }
        else{
-        alert(data.error)
+        seterrr(data.error)
        }
         
          
@@ -48,7 +56,7 @@ const ForgetPassword = () => {
   return (
     <div>
         {!emailsent? <div className='LoginForm'>
-     <Form>
+     <Form style={{width:"286px"}}>
      <h3 className="headingOfforms">Verification</h3>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -65,6 +73,9 @@ const ForgetPassword = () => {
       <Button variant="primary" className='SendOtpButton LoginButtonLoginPage' onClick={BackToLoginPage} style={{marginLeft:"10px"}} >
         Back
       </Button>
+    
+      {errr && !succc? <p style={{color:"red" , marginTop:"21px"}}>{errr}</p>:" " }
+    {succc && !errr? <p style={{color:"green" , marginTop:"21px"}}>{succc}</p>:" " }
     </Form>
     </div>:<OTPVerification email={inputs.email} />}
     </div>

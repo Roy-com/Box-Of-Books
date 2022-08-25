@@ -11,16 +11,34 @@ const ResetPassword = (email) => {
     const fetchHandeler = async () => {
       return await axios.post(URL,{email:email.email, password: String(inputs.password),repassword: String(inputs.repassword)}).then((res) => res.data);
     };
+    const [errr,seterrr]= useState();
+    const[succc,setsuccc]=useState();
     const ResetButton=(e)=>{
       e.preventDefault();
       fetchHandeler().then((data) => {
      if(data.status=="ok"
      ){
-      alert(data.message)
+
+      setInputs(() => ({
+               
+        password: "",
+        repassword: "",
+       
+      }));
+
+     seterrr()
+     setsuccc(data.message)
+   
+    setTimeout(function () {
+                 
       history("../login")
+   }, 3000);
+
+     
+     
      }
      else{
-      alert(data.error)
+      seterrr(data.error)
      }
       
        
@@ -43,7 +61,7 @@ const ResetPassword = (email) => {
   return (
     <div>
          <div className='LoginForm'>
-     <Form>
+     <Form style={{width:"343px",height:"343px"}}>
      <h3 className="headingOfforms">Reset Password</h3>
      <Form.Group className="mb-3 " controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
@@ -57,7 +75,10 @@ const ResetPassword = (email) => {
       </Form.Group>
       <Button variant="primary" type="submit" onClick={ResetButton} className="LoginButtonLoginPage">
         Reset
+
       </Button>
+      {errr && !succc? <p style={{color:"red" , marginTop:"11px"}}>{errr}</p>:" " }
+    {succc && !errr? <p style={{color:"green" , marginTop:"11px"}}>{succc}</p>:" " }
     </Form>
     </div>
     </div>

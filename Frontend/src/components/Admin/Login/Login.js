@@ -90,8 +90,10 @@ const Login = () => {
               // localStorage.setItem("authorname",)
               
                getAUthorName(res.data.user._id);
+               seterrr()
                setsuccc(res.data.message)
-               console.log(succc)
+               console.log(res.data.message)
+              
                setInputs(() => ({
                
                 email: "",
@@ -103,7 +105,7 @@ const Login = () => {
                       history("/Books");
                       // history("/Books")
                       window.location.reload();
-                    }, 4000);
+                    }, 3000);
                     // history("../Books");
                    
                   } else {

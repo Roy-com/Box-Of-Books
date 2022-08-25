@@ -10,3 +10,13 @@
         padding: 20px;
         border-radius: 5px;
     }
+
+    .timeremaininclockContainer{
+        position: relative;
+    }
+    .timeremaininclock{
+        position: absolute;
+        color: wheat;
+        top: 32px;
+        right: 12px;
+    }

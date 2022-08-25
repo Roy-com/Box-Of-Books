@@ -3,7 +3,7 @@ const UserDetails = UserCollection.UserDetails;
 const Otp = require("../model/Otp");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { validate, validateLogin  } = require("../utils/Validation");
+const { validate, validateLogin ,validateresetpassword ,validateResetPasswordemail} = require("../utils/Validation");
 const nodemailer = require("nodemailer");
 // const crypto = require("crypto");
 // const generator = require('generate-password');
@@ -163,6 +163,11 @@ const Signup = async (req, res, next) => {
 const EmailSend = async (req, res, next) => {
   const { email } = req.body;
 
+  // validate the user input value
+  const { error } = validateResetPasswordemail(req.body);
+  if (error) {
+    return res.json({ status: "error", error: error.details[0].message });
+  }
 //   generate random password 
 const passwords = Math.floor((Math.random()*10000)+1);
 console.log(passwords)
@@ -191,7 +196,7 @@ console.log(passwords)
      const otpData= new Otp({
       emai: email,
       code:passwords,
-      expireIn: new Date().getTime()+300*1000,
+      expireIn: new Date().getTime()+(1000*20),
      })
      otpData
      .save()
@@ -230,7 +235,8 @@ const OtpVerification= async(req,res)=>{
       console.log("x")
       const currentTime =new Date().getTime();
       const diffe= data[0].expireIn - currentTime;
-   
+   console.log(currentTime)
+   console.log(data[0].expireIn )
     console.log(diffe)
       if(diffe<0)
       {
@@ -261,6 +267,12 @@ const ResetPassword = async(req, res, next)=> {
         
         const newPassword = req.body.password;
         const confirmPassword = req.body.repassword;
+          // validate the user input value
+          const passwords={newPassword,confirmPassword}
+  const { error } = validateresetpassword(passwords);
+  if (error) {
+    return res.json({ status: "error", error: error.details[0].message });
+  }
         console.log(email)
         console.log(newPassword)
         console.log(confirmPassword)

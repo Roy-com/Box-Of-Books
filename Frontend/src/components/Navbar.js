@@ -113,9 +113,10 @@ useEffect(() => {
 }, []);
 
 const Logout=(e)=>{
+  window.location.reload();
   AuthService.logout();
   history("/")
-  window.location.reload();
+ 
 }
 // const BooksButtonClicked=(e)=>{
 //   e.preventDefault();

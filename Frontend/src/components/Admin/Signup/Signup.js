@@ -101,7 +101,7 @@ const Signup = () => {
 
   return (
     <div className='SignupForm'>
-        <Form>
+        <Form style={{width:"330px"}}>
         <h3 className="headingOfforms">Author Signup</h3>
       <Form.Group className="mb-3" >
         <Form.Label>Author Name</Form.Label>
