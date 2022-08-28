@@ -3,6 +3,8 @@ import React, { useEffect ,useState} from "react";
 import { useParams } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import "./BookDetails.css"
+import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button';
 
 const BookDetails = () => {
   const id = useParams().id;
@@ -39,52 +41,89 @@ const BookDetails = () => {
     }).then(res=> res.data);
   }
   return <div>
-     {inputs && <div className="AddBookForm">
-        <h3 className="addBookHeading"> Update BOOK</h3>
-       
-        <div className="mb-3">
-          <label>Name</label>
-          <input type="name" name="name" className="form-control" value={inputs.name} onChange={handleChange}/>
-        </div>
-        <div className="mb-3">
-          <label>Author</label>
-          <input type="text" name="author" className="form-control" value={inputs.author} onChange={handleChange}/>
-        </div>
-        <div className="mb-3">
-          <label>Description</label>
-          <input type="text" name="description" className="form-control" value={inputs.description}  onChange={handleChange}/>
-        </div>
+     {inputs &&   <div className="LoginForm" style={{height:"100vh", padding:"0px"}}>
+     
 
-        <div className="mb-3">
-          <label>Price</label>
-          <input type="number" name="price" className="form-control" value={inputs.price} onChange={handleChange}/>
-        </div>
 
-        <div className="mb-3">
-          <label>Image Url</label>
-          <input type="text" name="imageurl" className="form-control" value={inputs.imageurl} onChange={handleChange}/>
-        </div>
-       
-        <div className="checkboxOfAddBookdiv">
-        <div className="checkboxOfAddBook">
-          <input
-            type="checkbox"
-            id="availableBook"
-            name="availableBook"
-            onChange={()=>setChecked(!checked)}
-            checked={checked}
-           
-          />
-          <label for="availableBook"> Available</label>
-        </div>
-        </div>
-        <div className="mb-6 submitButoonOfAddBook">
-          <button type="submit" className="btn btn-primary " onClick={handleSubmit}>
-           Update This Book
-          </button>
-        </div>
+
+     <Form className="addBookFormcontainer">
+     <h3 className="headingOfforms">Update this Book</h3>
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Label>Book's Name</Form.Label>
+       <Form.Control
+         type="text"
         
-      </div>}
+         name="name"
+         value={inputs.name}
+         onChange={handleChange}
+       />
+     
+     </Form.Group>
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Label>Author's Name</Form.Label>
+       <Form.Control
+         type="text"
+       
+         name="author"
+         value={inputs.author}
+         onChange={handleChange}
+       />
+     
+     </Form.Group>
+    
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Label>Description of the book</Form.Label>
+       <Form.Control
+         type="text"
+        
+         name="description"
+         value={inputs.description}
+         onChange={handleChange}
+       />
+     
+     </Form.Group>
+  
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Label>Price of the book</Form.Label>
+       <Form.Control
+         type="text"
+        
+         name="price"
+         value={inputs.price}
+         onChange={handleChange}
+       />
+     
+     </Form.Group>
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Label>Image of the book</Form.Label>
+       <Form.Control
+         type="text"
+         
+         name="imageurl"
+         value={inputs.imageurl}
+         onChange={handleChange}
+       />
+     
+     </Form.Group>
+   
+       <Form.Group className="Availablecheck">
+      <Form.Check 
+     type="switch"
+     id="custom-switch"
+     label="Available"
+     onChange={() => setChecked(!checked)}
+     checked={checked}
+   />
+      </Form.Group>
+     <Button variant="primary" type="submit"   onClick={handleSubmit} className="AddButtonLoginPage" >
+   Update
+     </Button>
+    
+   
+ {/* {errr && !succc? <p style={{color:"red"}}>{errr}</p>:" " }
+ {succc && !errr? <p style={{color:"green"}}>{succc}</p>:" " } */}
+   </Form>
+   </div>}
   </div>;
 };
 

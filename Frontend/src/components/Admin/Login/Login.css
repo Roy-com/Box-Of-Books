@@ -68,3 +68,35 @@ color: #757393 !important;
     margin-bottom: 19px;
     font-size: 22px;
 }
+
+.adminButton {
+    text-decoration: none;
+    list-style: none;
+    color: #036899;
+    background: #ffffff;
+    padding: 4px;
+    padding-left: 45px;
+    width: 74px;
+    margin-right: 59px;
+    height: 67px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 1px;
+    border-left: 1px solid #abb9ab;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .adminButton {
+      padding: 0px;
+      border-left: none;
+      border-top: 1px solid #0edf0e;
+      border-bottom: 1px solid #0edf0e;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 28px;
+      text-align: center;
+      width: 50px;
+    }
+  }

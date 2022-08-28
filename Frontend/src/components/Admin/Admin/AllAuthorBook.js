@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./Book.css";
+
 import { useNavigate } from "react-router-dom";
 
 
-const Book = (props) => {
+const AllAuthorBook = (props) => {
   const [authorname, setauthorname] = useState(false);
   const history = useNavigate();
   const { _id, name, author, description, price, imageurl } = props.book;
@@ -48,11 +48,11 @@ const Book = (props) => {
       <p>{description}</p>
       <h2>Rs {price}</h2>
       <div className="button">
-     {authorName==author &&(<> <button onClick={updateButtonClicked} className="LoginButtonLoginPage">update</button>
-      <button className="LoginButtonLoginPage" onClick={DeleteButtonClicked}>delete</button></>)}
+     {(<> <button onClick={updateButtonClicked} className="LoginButtonLoginPage">update</button>
+      <button onClick={DeleteButtonClicked} className="LoginButtonLoginPage">delete</button></>)}
       </div>
     </div>
   );
 };
 
-export default Book;
+export default AllAuthorBook;

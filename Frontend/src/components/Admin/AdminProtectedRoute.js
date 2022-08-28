@@ -18,12 +18,22 @@ import { Route, Navigate ,Outlet} from "react-router-dom";
 //   );
 // };
 
-const ProtectedRoute = ({ auth, children }) => {
+const AdminProtectedRoute = ({ auth,admin, children }) => {
+    const adminauth= localStorage.getItem("AdminLoged")
     console.log(auth)
-    if (auth) {
+    if(admin==="admin")
+    {
+        if(auth)
+        {
+            return children
+        }
+    }
+    if(admin==="adminpage")
+  {  
+    if (auth && adminauth==="ttyl") {
         return children;
      
-    }
+    }}
   
     return <Navigate to="/login" replace />;
   };
@@ -37,4 +47,4 @@ const ProtectedRoute = ({ auth, children }) => {
   //   return <Navigate to="/login" replace />;
   // };
 
-export default ProtectedRoute;
+export default AdminProtectedRoute;

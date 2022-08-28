@@ -15,17 +15,51 @@
     /* justify-content: flex-start; */
     /* align-items: flex-start; */
     /* width: 22%; */
-    margin-left: -107px;
+    /* margin-left: -107px; */
     margin-top: -9px;
 }
-.checkboxOfAddBook label{
-    margin-left: 20px;
 
-}
 .submitButoonOfAddBook button{
     width: 164%;
 }
 .addBookHeading{
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+
+.AddButtonLoginPage{
+    background: #2a4c51!important;
+    color: #919ec6 !important;
+    border: none !important;
+    width: 116px !important;
+    font-size: 15px !important;
+    height: 32px !important;
+    padding: 0px !important;
+}
+.Availablecheck  label{
+color: #98a9b4;
+}
+.Availablecheck{
+    margin-bottom: 10px;
+}
+.form-check-input {
+   
+    background-color: #386272 !important;
+}
+.addBookFormcontainer{
+    width: 400px;
+}
+
+@media only screen and (max-width: 410px) {
+    .addBookFormcontainer{
+        width: 350px;
+    }
+
+}
+@media only screen and (max-width: 370px) {
+    .addBookFormcontainer{
+        width: 280px;
+    }
+
 }

@@ -71,7 +71,7 @@ const Signup = () => {
                   console.log(res)
       if(res.data.status=="ok")
       {
-      
+      seterrr()
         setsuccc(res.data.message)
         setInputs(() => ({
           name:"",     
@@ -87,6 +87,7 @@ const Signup = () => {
        
       }
       else{
+        setsuccc()
         seterrr(res.data.error)
         // alert(res.data.error)
       }
